@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = BombDefuser::VERSION
   s.authors     = ["Lucas Húngaro"]
   s.email       = ["lucashungaro@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/lucashungaro/bomb_defuser"
   s.summary     = %q{A simple wrapper for the awesome BombDefuser.com API}
   s.description = %q{A simple wrapper for the awesome BombDefuser.com API}
 
