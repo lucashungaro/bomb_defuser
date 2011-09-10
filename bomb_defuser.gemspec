@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Lucas Húngaro"]
   s.email       = ["lucashungaro@gmail.com"]
   s.homepage    = "https://github.com/lucashungaro/bomb_defuser"
-  s.summary     = %q{A simple wrapper for the awesome BombDefuser.com API}
-  s.description = %q{A simple wrapper for the awesome BombDefuser.com API}
+  s.summary     = %q{A simple wrapper for the awesome GiantBomb.com API}
+  s.description = %q{A simple wrapper for the awesome GiantBomb.com API}
 
   s.rubyforge_project = "bomb_defuser"
 
