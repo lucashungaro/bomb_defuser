@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require "ostruct"
 
-module GiantBomb
+module BombDefuser
   class CurbAdapter
     def self.http_get(url, headers = {})
       begin

@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-module GiantBomb
+module BombDefuser
   class Request
     def initialize(resource, params = {})
       self.request_url = "#{Configuration::BASE_URL}/#{resource}/"

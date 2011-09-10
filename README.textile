@@ -1,25 +1,25 @@
-h1. giant_bomb
+h1. bomb_defuser
 
 A simple wrapper for the awesome GiantBomb.com API.
 
-Does giant_bomb helps your daily work with Ruby? So, "please recommend me in Work With Rails":http://workingwithrails.com/recommendation/new/person/9370-lucas-h-ngaro and thanks for your kindness! :)
+Does bomb_defuser helps your daily work with Ruby? So, "please recommend me in Work With Rails":http://workingwithrails.com/recommendation/new/person/9370-lucas-h-ngaro and thanks for your kindness! :)
 
 h2. How?
 
 First, install the gem:
 
 <pre>
-$ [sudo] gem install giant_bomb
+$ [sudo] gem install bomb_defuser
 </pre>
 
 Then, add it as a dependency of your code using your favorite way (a simple require or mechanisms like the Bundler gem).
 
 Using it is really simple.
 
-First, you need an API key. Then, configure giant_bomb to use it:
+First, you need an API key. Then, configure bomb_defuser to use it:
 
 <pre>
-GiantBomb::Configuration.api_key = "my api key"
+BombDefuser::Configuration.api_key = "my api key"
 </pre>
 
 Now to the real data consumption. There are two kinds of entities: a Resource (single entity) and a ResourceList (list of entities).
@@ -27,21 +27,21 @@ Now to the real data consumption. There are two kinds of entities: a Resource (s
 An example of Resource is a Game. To get data about a particular game you can do the following:
 
 <pre>
->> GiantBomb::Game.details(17280)
+>> BombDefuser::Game.details(17280)
 => <#Hashie::Mash name="BioShock" ...>
 </pre>
 
 An example of a ResourceList is a GameList. To get a list of games you can do the following:
 
 <pre>
->> GiantBomb::GameList.fetch
+>> BombDefuser::GameList.fetch
 => [<#Hashie::Mash name="BioShock" ...>, <#Hashie::Mash name="Civilization V" ...>, ...]
 </pre>
 
 As you can see, the gem makes use of "Hashie's":https://github.com/intridea/hashie Mash, which basically is a Hash with attribute accessors for all keys, meaning you can use the dot notation to access values:
 
 <pre>
->> game = GiantBomb::Game.details(17280)
+>> game = BombDefuser::Game.details(17280)
 => <#Hashie::Mash name="BioShock" ...>
 >> game.name
 => "BioShock"
@@ -56,9 +56,9 @@ A ResourceList has one method (fetch) which receives two numeric parameters rega
 The GameList can also send a "platforms" parameter, which is an Array containing the ids of the gaming platforms that will be used to filter the results:
 
 <pre>
->> GiantBomb::GameList.platforms = [35, 129]
+>> BombDefuser::GameList.platforms = [35, 129]
 => [35, 129]
->> GiantBomb::GameList.fetch
+>> BombDefuser::GameList.fetch
 => [<#Hashie::Mash name="Uncharted" ...>, <#Hashie::Mash name="God of War" ...>, ...]
 </pre>
 
@@ -86,7 +86,7 @@ Resource lists:
 
 h3. Additional configuration
 
-Besides the API key, the Configuration class allows you to configure an adapter to make HTTP requests (you can use the included "CurbAdapter":https://github.com/lucashungaro/giant_bomb/blob/master/lib/curb_adapter.rb. and its specs as an example of implementation) and a logger (STDOUT by default).
+Besides the API key, the Configuration class allows you to configure an adapter to make HTTP requests (you can use the included "CurbAdapter":https://github.com/lucashungaro/bomb_defuser/blob/master/lib/curb_adapter.rb. and its specs as an example of implementation) and a logger (STDOUT by default).
 
 h2. Note on Patches/Pull Requests
 
@@ -101,5 +101,5 @@ h2. Note on Patches/Pull Requests
 
 h3. License
 
-sentinel is released under the MIT license. See "MIT LICENSE":https://github.com/lucashungaro/giant_bomb/blob/master/MIT-LICENSE.
+sentinel is released under the MIT license. See "MIT LICENSE":https://github.com/lucashungaro/bomb_defuser/blob/master/MIT-LICENSE.
 

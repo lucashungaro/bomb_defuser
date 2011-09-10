@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-module GiantBomb
+module BombDefuser
   module Errors
     class InvalidRequestError < StandardError; end
     class RequestFailedError < StandardError; end

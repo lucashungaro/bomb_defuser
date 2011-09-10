@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 require "logger"
 
-module GiantBomb
+module BombDefuser
   class Configuration
     BASE_URL = "http://api.giantbomb.com"
 

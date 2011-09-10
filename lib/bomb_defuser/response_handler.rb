@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-module GiantBomb
+module BombDefuser
   class ResponseHandler
     def initialize(parser = Yajl::Parser.new)
       self.parser = parser
@@ -21,7 +21,7 @@ module GiantBomb
         parsed_response = parser.parse(response.body)
         handle_api_details(parsed_response)
       else
-        raise Errors::UnrecognizedResponseError, "Your request didn't return a standard response from GiantBomb's API. Please check the log."
+        raise Errors::UnrecognizedResponseError, "Your request didn't return a standard response from BombDefuser's API. Please check the log."
       end
     end
 

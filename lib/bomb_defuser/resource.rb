@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-module GiantBomb
+module BombDefuser
   module Resource
     def details(resource_id)
       request = Request.new("#{resource}/#{resource_id}")

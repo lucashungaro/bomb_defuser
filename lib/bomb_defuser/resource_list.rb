@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-module GiantBomb
+module BombDefuser
   module ResourceList
     def fetch(page_number = 1, per_page = 100)
       self.params = {:page_number => page_number, :per_page => per_page}

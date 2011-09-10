@@ -1,0 +1,26 @@
+# -*- encoding: utf-8 -*-
+require "bomb_defuser/version"
+
+require "bomb_defuser/curb_adapter"
+require "bomb_defuser/errors"
+require "bomb_defuser/request"
+require "bomb_defuser/response_handler"
+require "bomb_defuser/resource"
+require "bomb_defuser/resource_list"
+
+require "bomb_defuser/company"
+require "bomb_defuser/company_list"
+require "bomb_defuser/configuration"
+require "bomb_defuser/game"
+require "bomb_defuser/game_list"
+require "bomb_defuser/genre"
+require "bomb_defuser/genre_list"
+require "bomb_defuser/platform"
+require "bomb_defuser/platform_list"
+require "bomb_defuser/theme"
+require "bomb_defuser/theme_list"
+
+require "curb"
+require "hashie"
+require "logger"
+require "yajl"

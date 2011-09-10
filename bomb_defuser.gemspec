@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "giant_bomb/version"
+require "bomb_defuser/version"
 
 Gem::Specification.new do |s|
-  s.name        = "giant_bomb"
-  s.version     = GiantBomb::VERSION
+  s.name        = "bomb_defuser"
+  s.version     = BombDefuser::VERSION
   s.authors     = ["Lucas Húngaro"]
   s.email       = ["lucashungaro@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{A simple wrapper for the awesome GiantBomb.com API}
-  s.description = %q{A simple wrapper for the awesome GiantBomb.com API}
+  s.summary     = %q{A simple wrapper for the awesome BombDefuser.com API}
+  s.description = %q{A simple wrapper for the awesome BombDefuser.com API}
 
-  s.rubyforge_project = "giant_bomb"
+  s.rubyforge_project = "bomb_defuser"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
