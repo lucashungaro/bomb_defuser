@@ -1,0 +1,88 @@
+h1. giant_bomb
+
+A simple wrapper for the awesome GiantBomb.com API.
+
+Does giant_bomb helps your daily work with Ruby? So, "please recommend me in Work With Rails":http://workingwithrails.com/recommendation/new/person/9370-lucas-h-ngaro and thanks for your kindness! :)
+
+h2. How?
+
+First, install the gem:
+
+<pre>
+$ [sudo] gem install giant_bomb
+</pre>
+
+Then, add it as a dependency of your code using your favorite way (a simple require or mechanisms like the Bundler gem).
+
+Using it is really simple.
+
+First, you need an API key. Then, configure giant_bomb to use it:
+
+<pre>
+GiantBomb::Configuration.api_key = "my api key"
+</pre>
+
+Now to the real data consumption. There are two kinds of entities: a Resource (single entity) and a ResourceList (list of entities).
+
+An example of Resource is a Game. To get data about a particular game you can do the following:
+
+<pre>
+>> GiantBomb::Game.details(17280)
+=> <#Hashie::Mash name="BioShock" ...>
+</pre>
+
+An example of a ResourceList is a GameList. To get a list of games you can do the following:
+
+<pre>
+>> GiantBomb::GameList.fetch
+=> [<#Hashie::Mash aliases="BioShock" ...>, <#Hashie::Mash aliases="Civilization V" ...>, ...]
+</pre>
+
+As you can see, the gem makes use of "Hashie's":https://github.com/intridea/hashie Mash, which basically is a Hash with attribute accessors for all keys, meaning you can use the dot notation to access values:
+
+<pre>
+>> game = GiantBomb::Game.details(17280)
+=> <#Hashie::Mash name="BioShock" ...>
+>> game.name
+=> "BioShock"
+</pre>
+
+For a Resource, the return will always be a Mash instance. For a ResourceList, it will be an Array of Mash instances.
+
+h3. Available endpoints
+
+Resources:
+
+* Company
+* Game
+* Genre
+* Platform
+* Theme
+
+Resource lists:
+
+* Companies
+* Games
+* Genres
+* Platforms
+* Themes
+
+h3. Additional configuration
+
+Besides the API key, the Configuration class allows you to configure an adapter to make HTTP requests (you can use the included "CurbAdapter":https://github.com/lucashungaro/giant_bomb/blob/master/lib/curb_adapter.rb. and its specs as an example of implementation) and a logger (STDOUT by default).
+
+h2. Note on Patches/Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+
+h3. License
+
+sentinel is released under the MIT license. See "MIT LICENSE":https://github.com/lucashungaro/giant_bomb/blob/master/MIT-LICENSE.
+
