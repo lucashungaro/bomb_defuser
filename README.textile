@@ -35,7 +35,7 @@ An example of a ResourceList is a GameList. To get a list of games you can do th
 
 <pre>
 >> GiantBomb::GameList.fetch
-=> [<#Hashie::Mash aliases="BioShock" ...>, <#Hashie::Mash aliases="Civilization V" ...>, ...]
+=> [<#Hashie::Mash name="BioShock" ...>, <#Hashie::Mash name="Civilization V" ...>, ...]
 </pre>
 
 As you can see, the gem makes use of "Hashie's":https://github.com/intridea/hashie Mash, which basically is a Hash with attribute accessors for all keys, meaning you can use the dot notation to access values:
@@ -48,6 +48,23 @@ As you can see, the gem makes use of "Hashie's":https://github.com/intridea/hash
 </pre>
 
 For a Resource, the return will always be a Mash instance. For a ResourceList, it will be an Array of Mash instances.
+
+A Resource has one method (details) which receives the entity id.
+
+A ResourceList has one method (fetch) which receives two numeric parameters regarding pagination: the first one is the current page and the second one is the amount of elements per page.
+
+The GameList can also send a "platforms" parameter, which is an Array containing the ids of the gaming platforms that will be used to filter the results:
+
+<pre>
+>> GiantBomb::GameList.platforms = [35, 129]
+=> [35, 129]
+>> GiantBomb::GameList.fetch
+=> [<#Hashie::Mash name="Uncharted" ...>, <#Hashie::Mash name="God of War" ...>, ...]
+</pre>
+
+The other lists do not feature additional filters at the moment.
+
+For further reference, please check the "official API documentation":http://api.giantbomb.com/documentation/.
 
 h3. Available endpoints
 
