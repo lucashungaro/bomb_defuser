@@ -88,6 +88,10 @@ h3. Additional configuration
 
 Besides the API key, the Configuration class allows you to configure an adapter to make HTTP requests (you can use the included "CurbAdapter":https://github.com/lucashungaro/bomb_defuser/blob/master/lib/curb_adapter.rb. and its specs as an example of implementation) and a logger (STDOUT by default).
 
+h2. Next steps
+
+Currently you can browse the collections and get details about each type of resource, but you can't do arbitrary searches (like finding games by name). This is the next logical step and will soon be implemented.
+
 h2. Note on Patches/Pull Requests
 
 * Fork the project.
